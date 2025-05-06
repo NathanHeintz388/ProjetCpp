@@ -14,3 +14,19 @@ double Circle::circumference(){
 double Circle::area(){
 	return radius*radius*pi;
 }
+
+void Circle::translate(Point T){
+	center=T;
+	
+}
+
+void Circle::resize(double ratio){
+	radius*=ratio;
+}
+
+bool Circle::equals(Circle circle){
+	if (circle.radius==radius && circle.center.x==center.x && circle.center.y==center.y){
+		return true;
+	}
+	return false;
+}
