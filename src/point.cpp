@@ -1,5 +1,7 @@
 #include "point.hpp"
-#include cmaths
-Point::Point(double x_val, double y_val) : x(x_val), y(y_val) {}
-double distance(Point B = Point()){
-	return(sqrt((A.y-B.y)*(A.y-B.y)+(A.x-B.x)*(A.x-B.x));} 
+#include <cmath>
+Point::Point(double x_val, double y_val){
+x=x_val;
+y=y_val;}
+double Point::distance(Point B){
+	return sqrt((y-B.y)*(y-B.y)+(x-B.x)*(x-B.x));} 
