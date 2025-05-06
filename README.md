@@ -9,6 +9,6 @@ then run main executable (main.exe if on windows or ./main if on linux)
 
 # How to send a commit
 - git add .
-- git commit -m "MESSAGE"
 - git pull
+- git commit -m "MESSAGE"
 - git push origin main

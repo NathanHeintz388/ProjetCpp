@@ -26,3 +26,11 @@ void Triangle::draw(){
 	vector<Point> V = {A,B,C};
 	draw_picture(V);
 }
+void Triangle::translate(T){
+	A.x=A.x+T.x;
+	B.x=B.x+T.x;
+	C.x=C.x+T.x;
+	A.y=A.y+T.y;
+	B.y=B.y+T.y;
+	C.y=C.y+T.y;
+}

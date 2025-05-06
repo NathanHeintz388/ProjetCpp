@@ -16,7 +16,8 @@ double Circle::area(){
 }
 
 void Circle::translate(Point T){
-	center=T;
+	center.x+=T.x;
+	center.y+=T.y;
 	
 }
 
