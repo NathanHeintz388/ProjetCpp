@@ -3,16 +3,14 @@
 #include <cmath>
 using namespace std;
 
+double pi=3.14159265358979323846;
+
 Circle::Circle(double r, Point c) : radius(r), center(c) {};
 
-double Circle::circumference{
-	return 2*M_pi*radius;
+double Circle::circumference(){
+	return 2*pi*radius;
 }
 
-double Circle::area{
-	return r*r*M_pi;
-}
-
-double Circle::draw{
-	return 0;
+double Circle::area(){
+	return radius*radius*pi;
 }
