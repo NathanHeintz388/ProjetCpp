@@ -23,7 +23,7 @@ Point Triangle::center(){
 	return G;
 }
 void Triangle::draw(){
-	vector<Point> V = {A,B,C};
+	vector<Point> V = {A,B,C,A};
 	draw_picture(V);
 }
 void Triangle::translate(Point T){
