@@ -29,6 +29,7 @@ void Square::draw(){
 	points.push_back(B);
 	points.push_back(C);
 	points.push_back(D);
+	points.push_back(A);
 	draw_picture(points);}
 	
 	
