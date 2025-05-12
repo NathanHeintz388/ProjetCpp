@@ -1,4 +1,5 @@
 #include "point.hpp"
+#include "draw.hpp"
 #include "shapes/circle.hpp"
 #include <cmath>
 using namespace std;
@@ -31,3 +32,17 @@ bool Circle::equals(Circle circle){
 	}
 	return false;
 }
+
+void Circle::draw(){
+	vector<Point> liste ={};
+	Point ajout=center;
+	for (int i=0;i<360;i++){
+		double angle=i*pi/180;
+		ajout.x += radius*cos(angle);
+		ajout.y += radius*sin(angle);
+		liste.push_back(ajout);
+		
+	}
+	draw_picture(liste);
+}
+	
