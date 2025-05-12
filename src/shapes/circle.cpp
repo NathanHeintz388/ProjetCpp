@@ -27,7 +27,7 @@ void Circle::resize(double ratio){
 }
 
 bool Circle::equals(Circle circle){
-	if (circle.radius==radius){
+	if (circle.radius==radius && center.x==circle.center.x && center.y==circle.center.y){
 		return true;
 	}
 	return false;
@@ -45,4 +45,3 @@ void Circle::draw(){
 	}
 	draw_picture(liste);
 }
-	
