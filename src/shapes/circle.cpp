@@ -38,8 +38,8 @@ void Circle::draw(){
 	Point ajout=center;
 	for (int i=0;i<361;i++){
 		double angle=i*pi/180;
-		ajout.x = radius*cos(angle);
-		ajout.y = radius*sin(angle);
+		ajout.x = radius*cos(angle)+center.x;
+		ajout.y = radius*sin(angle)+center.y;
 		liste.push_back(ajout);
 		
 	}
