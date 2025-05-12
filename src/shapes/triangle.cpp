@@ -46,10 +46,10 @@ bool Triangle::equals(Triangle triangle){
 	if(A.distance(B)==triangle.A.distance(B)){
 		return B.distance(C)==triangle.B.distance(C) and C.distance(A)==triangle.C.distance(A);
 	}
-	if(A.distance(B)=triangle.B.distance(C)){
+	if(A.distance(B)==triangle.B.distance(C)){
 		return B.distance(C)==triangle.C.distance(A) and C.distance(A)==triangle.A.distance(B);
 	}
-	if(A.distance(B)=triangle.C.distance(A)){
+	if(A.distance(B)==triangle.C.distance(A)){
 		return B.distance(C)==triangle.A.distance(B) and C.distance(A)==triangle.B.distance(C);
 	}
 	return false;
