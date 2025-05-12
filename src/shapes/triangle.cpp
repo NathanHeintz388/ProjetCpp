@@ -4,7 +4,6 @@
 #include <cmath>
 using namespace std;
 #include <vector>
-
 Triangle::Triangle(Point P, Point Q, Point R) : A(P), B(Q), C(R) {};
 double Triangle::perimeter(){
 	return A.distance(B) + B.distance(C) + C.distance(A);
@@ -41,6 +40,16 @@ void Triangle::resize(double ratio){
 	A.y=A.y*ratio;
 	B.y=B.y*ratio;
 	C.y=C.y*ratio;
+}
+void Triangle::rotate(double angle){
+	angle=angle*pi/180;
+	Point centre=Triangle::center();
+	A.x=(A.x-centre.x)*cos(angle)+centre.x;
+	B.x=(B.x-centre.x)*cos(angle)+centre.x;
+	C.x=(C.x-centre.x)*cos(angle)+centre.x;
+	A.y=(A.y-centre.y)*cos(angle)+centre.y;
+	B.y=(B.y-centre.y)*cos(angle)+centre.y;
+	C.y=(C.y-centre.y)*cos(angle)+centre.y;
 }
 bool Triangle::equals(Triangle triangle){
 	if(A.distance(B)==triangle.A.distance(B)){
