@@ -21,7 +21,6 @@ Point Square::center(){
 	return Point((A.x+C.x)/2,(A.y+C.y)/2);
 }
 void Square::draw(){
-	std::vector<Point> points;
 	Point vecAM(center().x-A.x,center().y-A.y);
 	Point B(center().x-vecAM.y,center().y+vecAM.x);
 	Point D(center().x+vecAM.x,center().y-vecAM.x);
