@@ -42,3 +42,21 @@ void Triangle::resize(double ratio){
 	B.y=B.y*ratio;
 	C.y=C.y*ratio;
 }
+bool Triangle::equals(Triangle triangle){
+	if(A.distance(B)==triangle.A.distance(B)){
+		return B.distance(C)==triangle.B.distance(C) and C.distance(A)==triangle.C.distance(A);
+	}
+	if(A.distance(B)=triangle.B.distance(C)){
+		return B.distance(C)==triangle.C.distance(A) and C.distance(A)==triangle.A.distance(B);
+	}
+	if(A.distance(B)=triangle.C.distance(A)){
+		return B.distance(C)==triangle.A.distance(B) and C.distance(A)==triangle.B.distance(C);
+	}
+	return false;
+}
+bool Triangle::isEquilateral(){
+	return A.distance(B)==B.distance(C) and A.distance(B)==C.distance(A);
+}
+bool Triangle::isIsoceles(){
+	return A.distance(B)==B.distance(C) or B.distance(C)==C.distance(A) or C.distance(A)==A.distance(B);
+}
