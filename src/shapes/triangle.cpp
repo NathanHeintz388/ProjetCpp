@@ -55,24 +55,24 @@ void Triangle::rotate(double angle){
 bool Triangle::equals(Triangle triangle){
 	Point centre=Triangle::center();
 	if(centre.x!=triangle.center().x and centre.y!=triangle.center().y)
-	if(A.distance(B)==triangle.A.distance(B)){
-		return B.distance(C)==triangle.B.distance(C) and C.distance(A)==triangle.C.distance(A);
+	if(A.distance(B)-triangle.A.distance(B)<=0.01 and A.distance(B)-triangle.A.distance(B)>=-0.01){
+		return B.distance(C)-triangle.B.distance(C)<=0.01 and B.distance(C)-triangle.B.distance(C)>=-0.01 and C.distance(A)-triangle.C.distance(A)<=0.01 and C.distance(A)-triangle.C.distance(A)>=-0.01;
 	}
-	if(A.distance(B)==triangle.B.distance(C)){
-		return B.distance(C)==triangle.C.distance(A) and C.distance(A)==triangle.A.distance(B);
+	if(A.distance(B)-triangle.B.distance(C)<=0.01 and A.distance(B)-triangle.B.distance(C)>=-0.01){
+		return B.distance(C)-triangle.C.distance(A)<=0.01 and B.distance(C)-triangle.C.distance(A)>=-0.01 and C.distance(A)-triangle.A.distance(B)<=0.01 and C.distance(A)-triangle.A.distance(B)>=-0.01;
 	}
-	if(A.distance(B)==triangle.C.distance(A)){
-		return B.distance(C)==triangle.A.distance(B) and C.distance(A)==triangle.B.distance(C);
+	if(A.distance(B)-triangle.C.distance(A)<=0.01 and A.distance(B)-triangle.C.distance(A)>=-0.01  ){
+		return B.distance(C)-triangle.A.distance(B)<=0.01 and B.distance(C)-triangle.A.distance(B)>=-0.01 and C.distance(A)-triangle.B.distance(C)<=0.01 and C.distance(A)-triangle.B.distance(C)>=-0.01;
 	}
 	return false;
 }
 bool Triangle::isRightAngled(){
 	double AB=A.distance(B),BC=B.distance(C),CA=C.distance(A);
-	return AB*AB==BC*BC+CA*CA or AB*AB+BC*BC==CA*CA or AB*AB+CA*CA==BC*BC;
+	return AB*AB-BC*BC+CA*CA<=0.01 and AB*AB-BC*BC+CA*CA>=-0.01 or AB*AB+BC*BC-CA*CA<=0.01 and AB*AB+BC*BC-CA*CA>=-0.01 or AB*AB+CA*CA-BC*BC<=0.01 and AB*AB+CA*CA-BC*BC>=-0.01 ;
 }
 bool Triangle::isEquilateral(){
-	return A.distance(B)==B.distance(C) and A.distance(B)==C.distance(A);
+	return A.distance(B)-B.distance(C)<=0.01 and A.distance(B)-B.distance(C)>=-0.01 and A.distance(B)-C.distance(A)<=0.01 and A.distance(B)-C.distance(A)>=-0.01;
 }
 bool Triangle::isIsoceles(){
-	return A.distance(B)==B.distance(C) or B.distance(C)==C.distance(A) or C.distance(A)==A.distance(B);
+	return A.distance(B)-B.distance(C)<=0.01 and A.distance(B)-B.distance(C)>=-0.01 or B.distance(C)-C.distance(A)<=0.01 and B.distance(C)-C.distance(A)>=-0.01 or C.distance(A)-A.distance(B)<=0.01 and C.distance(A)-A.distance(B)>=-0.01;
 }
