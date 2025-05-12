@@ -27,7 +27,7 @@ void Circle::resize(double ratio){
 }
 
 bool Circle::equals(Circle circle){
-	if (circle.radius==radius){
+	if (circle.radius==radius && center.x==circle.center.x && center.y==circle.center.y){
 		return true;
 	}
 	return false;
@@ -38,11 +38,10 @@ void Circle::draw(){
 	Point ajout=center;
 	for (int i=0;i<361;i++){
 		double angle=i*pi/180;
-		ajout.x = radius*cos(angle);
-		ajout.y = radius*sin(angle);
+		ajout.x = radius*cos(angle)+center.x;
+		ajout.y = radius*sin(angle)+center.y;
 		liste.push_back(ajout);
 		
 	}
 	draw_picture(liste);
 }
-	
