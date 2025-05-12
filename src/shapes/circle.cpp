@@ -36,10 +36,10 @@ bool Circle::equals(Circle circle){
 void Circle::draw(){
 	vector<Point> liste ={};
 	Point ajout=center;
-	for (int i=0;i<360;i++){
+	for (int i=0;i<361;i++){
 		double angle=i*pi/180;
-		ajout.x += radius*cos(angle);
-		ajout.y += radius*sin(angle);
+		ajout.x = radius*cos(angle);
+		ajout.y = radius*sin(angle);
 		liste.push_back(ajout);
 		
 	}
