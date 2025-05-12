@@ -54,6 +54,10 @@ bool Triangle::equals(Triangle triangle){
 	}
 	return false;
 }
+bool Triangle::isRightAngled(){
+	double AB=A.distance(B),BC=B.distance(C),CA=C.distance(A);
+	return AB*AB==BC*BC+CA*CA or AB*AB+BC*BC==CA*CA or AB*AB+CA*CA==BC*BC;
+}
 bool Triangle::isEquilateral(){
 	return A.distance(B)==B.distance(C) and A.distance(B)==C.distance(A);
 }
