@@ -36,21 +36,21 @@ void Triangle::translate(Point T){
 void Triangle::resize(double ratio){
 	Point centre=Triangle::center();
 	A.x=(A.x-centre.x)*ratio+centre.x;
-	B.x=(B.x-centre.x)*ratio+centre.x;
-	C.x=(C.x-centre.x)*ratio+centre.x;
 	A.y=(A.y-centre.y)*ratio+centre.y;
+	B.x=(B.x-centre.x)*ratio+centre.x;
 	B.y=(B.y-centre.y)*ratio+centre.y;
+	C.x=(C.x-centre.x)*ratio+centre.x;
 	C.y=(C.y-centre.y)*ratio+centre.y;
 }
 void Triangle::rotate(double angle){
 	angle=angle*numbers::pi/180;
 	Point centre=Triangle::center();
-	A.x=(A.x-centre.x)*cos(angle)+centre.x;
-	B.x=(B.x-centre.x)*cos(angle)+centre.x;
-	C.x=(C.x-centre.x)*cos(angle)+centre.x;
-	A.y=(A.y-centre.y)*sin(angle)+centre.y;
-	B.y=(B.y-centre.y)*sin(angle)+centre.y;
-	C.y=(C.y-centre.y)*sin(angle)+centre.y;
+	A.x=(A.x-centre.x)*cos(angle)+centre.x-(A.y-centre.y)*sin(angle);
+	A.y=(A.y-centre.y)*sin(angle)+centre.y+(A.x-centre.x)*cos(angle);
+	B.x=(B.x-centre.x)*cos(angle)+centre.x-(B.y-centre.y)*sin(angle);
+	B.y=(B.y-centre.y)*sin(angle)+centre.y+(B.x-centre.x)*cos(angle);
+	C.x=(C.x-centre.x)*cos(angle)+centre.x-(C.y-centre.y)*sin(angle);
+	C.y=(C.y-centre.y)*sin(angle)+centre.y+(C.x-centre.x)*cos(angle);
 }
 bool Triangle::equals(Triangle triangle){
 	Point centre=Triangle::center();
