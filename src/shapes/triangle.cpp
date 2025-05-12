@@ -47,9 +47,9 @@ void Triangle::rotate(double angle){
 	A.x=(A.x-centre.x)*cos(angle)+centre.x;
 	B.x=(B.x-centre.x)*cos(angle)+centre.x;
 	C.x=(C.x-centre.x)*cos(angle)+centre.x;
-	A.y=(A.y-centre.y)*cos(angle)+centre.y;
-	B.y=(B.y-centre.y)*cos(angle)+centre.y;
-	C.y=(C.y-centre.y)*cos(angle)+centre.y;
+	A.y=(A.y-centre.y)*sin(angle)+centre.y;
+	B.y=(B.y-centre.y)*sin(angle)+centre.y;
+	C.y=(C.y-centre.y)*sin(angle)+centre.y;
 }
 bool Triangle::equals(Triangle triangle){
 	if(A.distance(B)==triangle.A.distance(B)){
