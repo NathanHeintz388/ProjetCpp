@@ -54,7 +54,9 @@ void Triangle::rotate(double angle){
 }
 bool Triangle::equals(Triangle triangle){
 	Point centre=Triangle::center();
-	if(centre.x!=triangle.center().x and centre.y!=triangle.center().y)
+	if(centre.x!=triangle.center().x and centre.y!=triangle.center().y){
+		return false;
+	}
 	if(A.distance(B)-triangle.A.distance(B)<=0.01 and A.distance(B)-triangle.A.distance(B)>=-0.01){
 		return B.distance(C)-triangle.B.distance(C)<=0.01 and B.distance(C)-triangle.B.distance(C)>=-0.01 and C.distance(A)-triangle.C.distance(A)<=0.01 and C.distance(A)-triangle.C.distance(A)>=-0.01;
 	}
