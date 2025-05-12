@@ -48,7 +48,7 @@ int main() {
 	// TRIANGLE TESTS
 	
 	Triangle t(Point(0, 0), Point(0, 1), Point(1, 1));
-	std::cout << "Test Triangle Perimeter : " << t.perimeter() << " valeur attendue : " << 4 << std::endl;
+	std::cout << "Test Triangle Perimeter : " << t.perimeter() << " valeur attendue : " << 3.41421 << std::endl;
 	std::cout << "Test Triangle Area : " << t.area() << " valeur attendue : " << 0.5 << std::endl;
 	
 	t.resize(100.0);
@@ -56,23 +56,20 @@ int main() {
 	t.draw();
 	Point triangle_center = t.center();
 	
-	std::cout << "Test Triangle Center : " << triangle_center.x << " " << triangle_center.y << " valeur attendue : " << 33.333 << " " << 66.666 << std::endl;
+	std::cout << "Test Triangle Center : " << triangle_center.x << " " << triangle_center.y << " valeur attendue : " << 0.333333 << " " << 0.666667 << std::endl;
 	
 	t.translate(Point(-300, -200));
+	t.rotate(90.0);
 	t.draw();
 
-	// std::cout << "Test Triangle Equals : " << t.equals(Triangle(Point(0, 0), Point(0, 100), Point(100, 100))) << " valeur attendue : " << true << std::endl;
-	// TODO : Check Test
+	std::cout << "Test Triangle Equals : " << t.equals(t) << " valeur attendue : " << false << std::endl;
 	std::cout << "Test Triangle Equilateral : " << t.isEquilateral() << " valeur attendue : " << false << std::endl;
 	
-	 std::cout << "Test Triangle Right Hangled : " << t.isRightAngled() << " valeur attendue : " << true << std::endl;
+	std::cout << "Test Triangle Right Hangled : " << t.isRightAngled() << " valeur attendue : " << true << std::endl;
+	std::cout << "Test Triangle Isocele : " << t.isIsoceles() << " valeur attendue : " << true << std::endl; 
+	
 	
 	/*
-	
-	void rotate(double angle); // rotate counterclockwise around the center of the triangle 
-	
-	
-	bool isIsoceles();
 	
 	Circle inscribedCircle();
 	
@@ -80,7 +77,7 @@ int main() {
 	
 	// SQUARE TESTS
 	
-	Square s(Point(0, 0), Point(1, 1));
+	Square s(Point(0, 0), Point(50, 50));
 	
 	std::cout << "Test Square Side : " << s.side() << " valeur attendue : " << 1 << std::endl;
 	std::cout << "Test Square Perimeter : " << s.perimeter() << " valeur attendue : " << 4 << std::endl;
