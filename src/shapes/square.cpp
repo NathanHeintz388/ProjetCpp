@@ -25,4 +25,5 @@ void Square::draw(){
 	points.push_back(Point(A.x, A.y-side()));
 	points.push_back(C);
 	points.push_back(Point(C.x, C.y+side()));
-	draw_picture(points);}
+	draw_picture(points);
+}
