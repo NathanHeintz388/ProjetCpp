@@ -26,11 +26,19 @@ void Triangle::draw(){
 	vector<Point> V = {A,B,C};
 	draw_picture(V);
 }
-void Triangle::translate(T){
+void Triangle::translate(Point T){
 	A.x=A.x+T.x;
 	B.x=B.x+T.x;
 	C.x=C.x+T.x;
 	A.y=A.y+T.y;
 	B.y=B.y+T.y;
 	C.y=C.y+T.y;
+}
+void Triangle::resize(double ratio){
+	A.x=A.x*ratio;
+	B.x=B.x*ratio;
+	C.x=C.x*ratio;
+	A.y=A.y*ratio;
+	B.y=B.y*ratio;
+	C.y=C.y*ratio;
 }
