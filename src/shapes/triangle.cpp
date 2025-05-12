@@ -42,7 +42,7 @@ void Triangle::resize(double ratio){
 	C.y=C.y*ratio;
 }
 void Triangle::rotate(double angle){
-	angle=angle*pi/180;
+	angle=angle*numbers::pi/180;
 	Point centre=Triangle::center();
 	A.x=(A.x-centre.x)*cos(angle)+centre.x;
 	B.x=(B.x-centre.x)*cos(angle)+centre.x;
